@@ -1,9 +1,16 @@
-secret_number = 7
-guessed = False
-while not guessed:
-    user_input = int(input("Угадай число от 1 до 10: "))
-    if user_input == secret_number:
-       print("Поздравляю! Вы угадали число.")
-       guessed = True
-    else:
-       print("Попробуйте еще раз.") 
+# 1. Создаём пустой список для хранения задач
+tasks = []
+
+# 2. Запрашиваем 3 задачи у пользователя через цикл
+for i in range(3):
+    # i - это номер текущего шага (0, 1, 2)
+    task = input(f"Введите задачу №{i + 1}: ")
+    # Метод append добавляет новый элемент в конец списка
+    tasks.append(task)
+
+print("\n--- Ваш список дел на сегодня ---")
+
+# 3. Выводим все элементы из нашего списка по очереди
+for index, item in enumerate(tasks, start=1):
+    # enumerate дает нам одновременно и порядковый номер, и сам элемент
+    print(f"{index}. {item}")
